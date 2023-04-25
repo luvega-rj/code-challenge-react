@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Form from './Form';
 import Table from './Table';
 import './App.css';
-
+ 
 function App() {
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/transactions')
-      .then(response => response.json())
-      .then(data => setTransactions(data));
+  fetch('http://localhost:3000/transactions')
+    .then(response => response.json())
+    .then(transactions => setTransactions(transactions))
+    .catch(error => console.error(error));
+}, []);
 
-  }, []);
 
   const handleSort = (type) => {
     const sortedTransactions = [...transactions].sort((a, b) => {

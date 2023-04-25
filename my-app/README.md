@@ -102,7 +102,7 @@ Copy code
 import React, { useState } from 'react';
 import Table from './Table';
 
-function App() {
+//  function App() {
   const [transactions, setTransactions] = useState([]);
 
   // ...
@@ -121,6 +121,42 @@ function App() {
 export default App;
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
+
+## form.js
+This repository contains a simple React component that allows users to add new transactions to a table.
+
+## Props
+The Form component takes the following prop:
+
+handleAddTransaction (function): A function to handle adding a new transaction. When the user submits the form, this function is called with a new transaction object as its argument.
+Usage
+To use the Form component, simply import it into your React application and include it in your JSX code.
+
+## jsx
+Copy code
+import React, { useState } from 'react';
+import Form from './Form';
+
+function App() {
+  const [transactions, setTransactions] = useState([]);
+
+  const handleAddTransaction = (newTransaction) => {
+    setTransactions([...transactions, newTransaction]);
+  };
+
+  return (
+    <div>
+      <Form handleAddTransaction={handleAddTransaction} />
+    </div>
+  );
+}
+
+export default App;
+## License
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+
+
 
 
 

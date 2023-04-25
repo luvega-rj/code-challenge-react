@@ -10,6 +10,7 @@ function App() {
     fetch('http://localhost:3000/transactions')
       .then(response => response.json())
       .then(data => setTransactions(data));
+
   }, []);
 
   const handleSort = (type) => {
@@ -26,6 +27,7 @@ function App() {
   };
 
   const handleDelete = (id) => {
+    // alert(id)
     const filteredTransactions = transactions.filter(transaction => transaction.id !== id);
     setTransactions(filteredTransactions);
   };

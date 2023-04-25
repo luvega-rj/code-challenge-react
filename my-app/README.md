@@ -68,3 +68,59 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+ ## App.js
+This repository contains a simple React application that allows users to add, sort, and delete transactions.
+
+### Installation
+Clone the repository using git clone.
+Navigate to the project directory using cd.
+Install the dependencies using npm install.
+Start the application using npm start.
+### Usage
+Once the application is started, you can add transactions by filling out the form at the top of the page. The transactions will appear in a table below the form. You can sort the table by clicking on the table headers. You can also delete transactions by clicking on the "Delete" button next to each transaction.
+
+### Contributing
+Contributions to this project are welcome! If you would like to contribute, please fork the repository and create a pull request.
+
+### License
+This project is licensed under the MIT License. See the LICENSE file for more information.
+## table.js
+This repository contains a simple React component that displays transactions in a table.
+
+## Props
+The Table component takes the following props:
+
+transactions (array): An array of transaction objects to be displayed in the table.
+handleSort (function): A function to handle sorting the transactions. When a user clicks on a table header, this function is called with the type of the column to sort by.
+handleDelete (function): A function to handle deleting a transaction. When a user clicks on the "Delete" button next to a transaction, this function is called with the id of the transaction to delete.
+Usage
+To use the Table component, simply import it into your React application and include it in your JSX code.
+
+## jsx
+Copy code
+import React, { useState } from 'react';
+import Table from './Table';
+
+function App() {
+  const [transactions, setTransactions] = useState([]);
+
+  // ...
+
+  return (
+    <div>
+      <Table
+        transactions={transactions}
+        handleSort={handleSort}
+        handleDelete={handleDelete}
+      />
+    </div>
+  );
+}
+
+export default App;
+## License
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+
+

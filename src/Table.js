@@ -19,7 +19,7 @@ function Table(props) {
             <td>{transaction.date}</td>
             <td>{transaction.description}</td>
             <td style={{ color: transaction.amount >= 0 ? 'green' : 'red' }}>
-              {transaction.amount >= 0 ? '+' : '-'}${Math.abs(transaction.amount).toFixed(2)}
+              {transaction.amount >= 0 ? '+' : '-'}${Math.abs(transaction.amount).toFixed(0)}
             </td>
             <td>
               <button onClick={() => handleDelete(transaction.id)}>Delete</button>
